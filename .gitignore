@@ -1,0 +1,12 @@
+# Dati: troppo grandi per git (GitHub rifiuta i file sopra i 100 MB)
+dataset_sample/
+dataset_clean/
+*.csv
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+
+# macOS
+.DS_Store
