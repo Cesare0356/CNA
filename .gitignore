@@ -1,7 +1,5 @@
-# Dati: troppo grandi per git (GitHub rifiuta i file sopra i 100 MB)
-#dataset_sample/
-#dataset_clean/
-#*.csv
+# I CSV del campione sono versionati (ogni file è sotto i 100 MB, il limite di GitHub).
+# Con il dataset completo i file supereranno quel limite: andranno esclusi qui o gestiti con Git LFS.
 
 # Python / Jupyter
 __pycache__/
