@@ -27,17 +27,7 @@ TEMP_WORKER_DIR = Path("worker_temp_files")
 BASE_URL = "https://toncenter.com/api/v3/actions"
 
 # Load keys from environment variable (comma-separated) or hardcode a fallback list
-API_KEYS = ["63054951e624ae18bea53567400123b039df0e05a0245f95a64ac0897bcb1917",
-    "8660df71b1606cc5be730aaeb25427e0aebd58d10c120960a84d6457a82023d7",
-    "a95ce82f4d3022ce910b7e221c76e7f09ecb6fced42a2044564e9222f5c95284",
-    "c251d33135e1fd46e6c331275ea4f175960d16bd7d1571701c6aed9552a55080",
-    "61a4fbc15496d9205296ebd033f324bb545716c750766980d46582438c3b9009",
-    "5bb4c419276f450cbdc419914c92b4bb3ad3e51e5c514e8ff081e89c4ba05f07",
-    "4f1188c792c88cf27a59bbda10e95126706ae0f86664d1a0174bd8ff619c5fc7",
-    "562aaa8a60ac481c7b1f9e7ad80c301a4d2d613f6caab8d9736688c3e03946af",
-    "1f7cf1a40b082b4218d1caef06789aeaf0b6da72c775ed86d50c5779eaf6b494",
-    "f66bf494477344c5cc3fbee4c3ccaf4a14194ca7828ec1cd106b597557c6c5d3",
-    "55c99061a03ed5b0623c024f9031b89c91921a1b37eeac6b133ab72d44620f03"
+API_KEYS = [
     # Add your additional Toncenter API keys here
 ]
 
