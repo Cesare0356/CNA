@@ -8,3 +8,7 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Dataset completo e tabelle intermedie: superano il limite di 100 MB di GitHub
+fragment_final.jsonl
+analisi_output/dati/
