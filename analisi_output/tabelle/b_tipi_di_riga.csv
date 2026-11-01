@@ -1,0 +1,8 @@
+layer,tipo_riga,acquisto_nft_purchase,acquisto_nft_transfer,trasferimento_senza_prezzo,totale
+phone_numbers,A -> B,47296,168695,440080,656071
+phone_numbers,B -> B,15,1981,40115,42111
+phone_numbers,NULL -> A,0,5488,131078,136566
+usernames,A -> B,78371,207800,1636949,1923120
+usernames,B -> B,0,7522,86292,93814
+usernames,NULL -> A,0,555207,0,555207
+totale,,125682,946693,2334514,3406889

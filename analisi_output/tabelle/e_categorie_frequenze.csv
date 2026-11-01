@@ -1,0 +1,103 @@
+layer,categoria,n,quota,rara
+phone_numbers,007 Club,152,0.0011130149524771905,True
+phone_numbers,123 Club,608,0.004452059809908762,True
+phone_numbers,1314 Club,131,0.0009592431498323155,True
+phone_numbers,168 Club,518,0.0037930377985735835,True
+phone_numbers,520 Club,613,0.004488672143871828,True
+phone_numbers,666 Club,114,0.0008347612143578929,True
+phone_numbers,69 Club,13568,0.09935122944217448,False
+phone_numbers,777 Club,136,0.000995855483795381,True
+phone_numbers,888 Club,347,0.002540895977036744,True
+phone_numbers,Date Club,41839,0.3063646881361393,False
+phone_numbers,No_Categories,77230,0.5655141103935094,False
+phone_numbers,Numbers Length 7,149,0.0010910475520993512,True
+phone_numbers,Numbers Repeating 2 Digits,4099,0.03001479138292108,False
+phone_numbers,Numbers Repeating 3 Digits,1366,0.010002489638709488,False
+phone_numbers,Numbers Repeating 4 Digits,739,0.005411302959741077,True
+phone_numbers,Numbers Repeating 5 Digits,265,0.0019404537000424704,True
+phone_numbers,Numbers Repeating 6 Digits,130,0.0009519206830397025,True
+phone_numbers,Numbers Repeating 7 Digits,30,0.00021967400377839285,True
+phone_numbers,Numbers Repeating 8 Digits,3,2.1967400377839286e-05,True
+phone_numbers,Numbers Repeating AABB,853,0.0062460641740989704,True
+phone_numbers,Numbers Repeating AABBCC,204,0.0014937832256930715,True
+phone_numbers,Numbers Repeating ABAB,3373,0.024698680491483972,False
+phone_numbers,Numbers Repeating ABABAB,194,0.0014205585577669404,True
+phone_numbers,Numbers Repeating ABCABC,149,0.0010910475520993512,True
+phone_numbers,Numbers Repeating ABCDABCD,373,0.002731280113644685,True
+phone_numbers,Numbers Repeating AxAxA,870,0.006370546109573393,True
+phone_numbers,Numbers Repeating AxAxAxA,289,0.0021161929030651845,True
+phone_numbers,Numbers With 888 On Each Side,194,0.0014205585577669404,True
+phone_numbers,Palindromic Numbers,74,0.000541862542653369,True
+phone_numbers,Palindromic Numbers Beginning 888,30,0.00021967400377839285,True
+phone_numbers,Palindromic Numbers With 888 On Each Side,30,0.00021967400377839285,True
+phone_numbers,Palindromic Numbers Without First,137,0.001003177950587994,True
+phone_numbers,Palindromic Numbers Without Last,104,0.000761536546431762,True
+phone_numbers,Pi Club,19,0.0001391268690596488,True
+phone_numbers,Years 1900 2015,2785,0.020393070017427472,False
+usernames,10 Letters,41227,0.07425518770476597,False
+usernames,10 Letters Palindrome,30,5.4033900869405464e-05,True
+usernames,1k forebears,425,0.0007654802623165774,True
+usernames,365 Club,1,1.8011300289801822e-06,True
+usernames,3ID Club,312,0.0005619525690418168,True
+usernames,4 Letters,4798,0.008641821879046914,True
+usernames,5 Letters,121399,0.21865538438816515,False
+usernames,5 Letters Palindrome,1924,0.0034653741757578703,True
+usernames,6 Letters,83153,0.1497693652997891,False
+usernames,6 Letters Palindrome,390,0.000702440711302271,True
+usernames,7 Letters,77594,0.13975688346868825,False
+usernames,7 Letters Palindrome,366,0.0006592135906067466,True
+usernames,8 Letters,62857,0.11321363023160731,False
+usernames,8 Letters Palindrome,76,0.00013688588220249384,True
+usernames,80s Music,50,9.005650144900911e-05,True
+usernames,9 Letters,51650,0.09302836599682641,False
+usernames,9 Letters Palindrome,134,0.00024135142388334441,True
+usernames,Capital cities,63,0.00011347119182575148,True
+usernames,Cartoon Characters,69,0.00012427797199963256,True
+usernames,Cat breeds,10,1.801130028980182e-05,True
+usernames,Clash Royale Cards,38,6.844294110124692e-05,True
+usernames,Colours,31,5.5835030898385646e-05,True
+usernames,Countries,124,0.00022334012359354259,True
+usernames,Country leaders,9,1.621017026082164e-05,True
+usernames,Diablo,20,3.602260057960364e-05,True
+usernames,Disney Princesses,9,1.621017026082164e-05,True
+usernames,Dota Characters,57,0.00010266441165187038,True
+usernames,Easter,9,1.621017026082164e-05,True
+usernames,Esp Top Nouns,234,0.0004214644267813626,True
+usernames,Esp Top Verbs,13,2.341469037674237e-05,True
+usernames,Female firstnames,1210,0.0021793673350660203,True
+usernames,Flowers,44,7.924972127512802e-05,True
+usernames,Folklore,76,0.00013688588220249384,True
+usernames,Food,155,0.00027917515449192825,True
+usernames,French Top Nouns,232,0.00041786216672340225,True
+usernames,French Top Verbs,40,7.204520115920728e-05,True
+usernames,Games,37,6.664181107226674e-05,True
+usernames,Gen1 pokemon,43,7.744859124614783e-05,True
+usernames,German Nouns,223,0.00040165199646258063,True
+usernames,German Verbs,19,3.422147055062346e-05,True
+usernames,Gym leaders pokemon,35,6.303955101430637e-05,True
+usernames,Harry Potter,6,1.0806780173881093e-05,True
+usernames,Jurassic,14,2.521582040572255e-05,True
+usernames,Languages of the World,44,7.924972127512802e-05,True
+usernames,League of Legends Characters,55,9.906215159391001e-05,True
+usernames,Legendary Pokemon,36,6.484068104328655e-05,True
+usernames,Luxury brands,26,4.682938075348474e-05,True
+usernames,Main Music Genres,35,6.303955101430637e-05,True
+usernames,Male firstnames,491,0.0008843548442292695,True
+usernames,Marvel Club,322,0.0005799638693316187,True
+usernames,Mnemonic Club,1278,0.002301844177036673,True
+usernames,Months,8,1.4409040231841457e-05,True
+usernames,Naruto Names,64,0.00011527232185473166,True
+usernames,No_Categories,112319,0.20230112372502507,False
+usernames,Overwatch,10,1.801130028980182e-05,True
+usernames,Palindrome Cities,4,7.204520115920729e-06,True
+usernames,Periodic Table Elements,22,3.962486063756401e-05,True
+usernames,Professions,95,0.0001711073527531173,True
+usernames,Roman Numerals 969 Club,13,2.341469037674237e-05,True
+usernames,Sport,72,0.0001296813620865731,True
+usernames,Star Wars,21,3.7823730608583825e-05,True
+usernames,Studio Ghibli,24,4.3227120695524374e-05,True
+usernames,Tolkien,16,2.8818080463682915e-05,True
+usernames,Top Nouns,556,0.0010014282961129813,True
+usernames,Top Verbs,599,0.0010788768873591292,True
+usernames,USA States,33,5.943729095634601e-05,True
+usernames,Valorant,14,2.521582040572255e-05,True

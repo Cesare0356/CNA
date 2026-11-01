@@ -1,0 +1,11 @@
+ipykernel==7.4.0
+leidenalg==0.12.0
+matplotlib==3.11.2
+nbconvert==7.17.2
+nbformat==5.11.1
+numpy==2.5.4
+pandas==3.0.6
+pyarrow==26.0.0
+python-igraph==1.0.0
+scikit-learn==1.9.1
+scipy==1.18.1

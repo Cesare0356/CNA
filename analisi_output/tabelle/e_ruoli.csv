@@ -1,0 +1,9 @@
+layer,gruppo,percentile_pagerank,bridging,dimensione_comunita
+Username,Core cross-layer,0.9929667539374493,0.1601906158357771,3175.0
+Username,Hub specialisti username,0.9921077315175957,0.09360010513174322,13614.0
+Username,Cross-layer,0.54409437877204,0.0,8831.0
+Username,Specialisti username,0.49119502019650135,0.0,13710.0
+Numeri,Core cross-layer,0.996524373583632,0.3229557843731072,3577.0
+Numeri,Hub specialisti numeri,0.993048747167264,0.2365722528193024,2658.0
+Numeri,Cross-layer,0.6487648467509924,0.0,3577.0
+Numeri,Specialisti numeri,0.44692135842749,0.0,3172.0
