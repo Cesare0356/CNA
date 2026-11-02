@@ -10,3 +10,29 @@ __pycache__/
 .DS_Store
 
 .env
+
+# Datasets
+dataset/
+dataset_categories/
+dataset_clean/
+dataset_clean_categories/
+dataset_clean_final/
+dataset_filtered/
+dataset_network_final/
+dataset_normalized/
+dataset_orphans/
+dataset_sample/
+cleaning/
+complete_dataset_raw/
+
+# Holding time
+holding_analysis/
+
+# Logs
+logs/
+
+mancanti.py
+prova.py
+holding_time.ipynb
+mint_control.ipynb
+verifica.ipynb
