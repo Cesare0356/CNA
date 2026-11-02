@@ -8,7 +8,8 @@ import numpy as np
 import pandas as pd
 
 BASE = Path(__file__).resolve().parent
-JSONL = BASE / 'fragment_final.jsonl'
+# il file finale sta in dataset_network_final/ (dove lo crea preprocessing/final_processing.ipynb) o nella cartella principale
+JSONL = next((p for p in [BASE / 'dataset_network_final' / 'fragment_final.jsonl', BASE / 'fragment_final.jsonl'] if p.exists()), BASE / 'fragment_final.jsonl')
 OUTPUT = BASE / 'analisi_output'
 DATI = OUTPUT / 'dati'          # tabelle intermedie, escluse da git perche' troppo grandi
 TABELLE = OUTPUT / 'tabelle'

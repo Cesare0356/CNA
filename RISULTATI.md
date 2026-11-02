@@ -4,7 +4,7 @@ Riepilogo per la relazione (sezione 9 del piano operativo). Il dettaglio è nei 
 
 ## Come rieseguire
 
-`fragment_final.jsonl` non è su git (2,4 GB): va messo nella cartella principale. Le tabelle intermedie in `analisi_output/dati/` si rigenerano.
+`fragment_final.jsonl` non è su git (2,4 GB): va in `dataset_network_final/`, dove lo crea `preprocessing/final_processing.ipynb`, oppure nella cartella principale. Le tabelle intermedie in `analisi_output/dati/` si rigenerano.
 
 ```bash
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
@@ -15,7 +15,7 @@ Ordine dei notebook: `fase_b_reti` → `fase_c_intra_layer` → `fase_d_inter_la
 
 ## Metodi
 
-- **Dati**: 3.406.889 azioni e 691.773 NFT (555.207 username, 136.566 numeri), dal 2 novembre 2022 al 22 ottobre 2026. Il dataset è usato così com'è.
+- **Dati**: 3.406.889 azioni e 691.773 NFT (555.207 username, 136.566 numeri), dal 2 novembre 2022 al 22 ottobre 2026. Il dataset è usato così com'è. I conteggi coincidono con quelli di `preprocessing/final_processing.ipynb` (2.579.191 archi, 135.925 righe B → B).
 - **Layer**: un grafo diretto per mercato. Lo stesso wallet è lo stesso nodo in ogni layer.
 - **Archi**: regole di `descrizione_colonne_fragment_final.txt`. NULL → A crea solo il nodo, A → B crea l'arco, B → B non crea niente. Peso = numero di passaggi.
 - **Due versioni della rete**:
@@ -70,8 +70,8 @@ A parità di attività e anno di ingresso (`analisi_output/tabelle/e_test_a_pari
 
 | Confronto | Differenze principali |
 |---|---|
-| Core contro hub specialisti | più controparti (circa 1,4 volte), possessi più brevi (circa 2/3); negli username prezzi pagati più alti (circa 1,8 volte) e più NFT rari (+6,8 punti). Nessuna differenza nei prezzi pagati nei numeri |
-| Cross-layer contro specialisti | possessi più lunghi (circa 1,6 volte), prezzi pagati più alti (circa 1,3 e 1,2 volte), meno passaggi senza prezzo (−5,8 punti), più NFT rari, meno scambi con altre comunità |
+| Core contro hub specialisti | più controparti (circa 1,4 volte), possessi più brevi (circa 2/3); negli username prezzi incassati più alti (circa 3,3 volte), prezzi primari più alti (circa 2,2 volte) e più NFT rari (+6,8 punti). Nessuna differenza significativa nel prezzo pagato sul secondario, né nei prezzi dei numeri |
+| Cross-layer contro specialisti | possessi più lunghi (circa 1,6 volte), prezzi pagati sul secondario più alti (circa 1,3 e 1,2 volte), prezzi incassati più alti (circa 1,5 e 1,2 volte), meno passaggi senza prezzo (−5,8 punti), più NFT rari, meno scambi con altre comunità |
 
 - Possesso mediano con i periodi aperti (Kaplan-Meier): nei numeri 1,5 giorni per il core, 22 per gli hub specialisti, 88 per i cross-layer, 169 per gli specialisti; negli username 13, 13, 290, 29.
 - Il core entra subito nel secondo mercato (mediana 10 giorni), mantiene la stessa posizione nei due layer (differenza mediana di percentile 0,005 contro 0,21 dei cross-layer) e ha più scambi verso altre comunità.
@@ -85,7 +85,8 @@ Figure: `e_attivita`, `e_economia`, `e_possesso_km`, `e_evoluzione`, `e_ruoli_br
 - Un wallet non è necessariamente una persona, e la stessa persona può avere più wallet.
 - L'81% dei passaggi degli username e il 65% di quelli dei numeri non ha un prezzo. Il prezzo assente non vuol dire regalo.
 - L'elenco dei contratti è parziale: non tutti i contratti minori sono stati riconosciuti.
-- I prezzi sono presi dal file finale senza un'ulteriore validazione. Lo 0,1% più alto vale il 48% del volume degli username e il 62% di quello dei numeri, quindi si usano le mediane e i volumi non vanno interpretati come profitti.
+- I prezzi sono presi dal file finale, quindi si usano le mediane e i volumi non vanno interpretati come profitti. Ci sono prezzi anomali da verificare: 14 vendite di numeri da oltre 1 milione di TON, tra febbraio e aprile 2025, valgono il 55% del volume secondario dei numeri; 2 vendite valgono il 19% di quello degli username.
+- Le vendite primarie sono il 66% degli acquisti degli username, quasi sempre a 10 TON, e sono analizzate a parte. Nei numeri il prezzo primario c'è solo per 5.488 NFT su 136.566.
 - Con questi numeri quasi tutto è statisticamente significativo: contano le dimensioni delle differenze. Con 200 permutazioni il p-value minimo è 0,005.
 - Le sequenze temporali non indicano un rapporto di causa.
 
