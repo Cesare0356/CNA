@@ -1,0 +1,7 @@
+layer,tipo_riga,completa,senza contratti
+phone_numbers,A -> B,656071,610955
+phone_numbers,B -> B,42111,53143
+phone_numbers,NULL -> A,136566,136566
+usernames,A -> B,1923120,1470602
+usernames,B -> B,93814,120126
+usernames,NULL -> A,555207,555193

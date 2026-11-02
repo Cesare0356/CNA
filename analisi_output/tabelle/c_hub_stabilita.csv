@@ -1,0 +1,9 @@
+layer,metrica,contratti identificati nei top 100 della rete completa,Jaccard completa / senza contratti,Spearman completa / senza contratti
+Username,grado,4.0,0.7699115044247787,0.9990373828274515
+Username,forza,4.0,0.7699115044247787,0.9993123536197291
+Username,PageRank,5.0,0.4925373134328358,0.9738797479922351
+Username,PageRank con pesi / senza pesi,,0.639344262295082,0.9527421049189192
+Numeri,grado,3.0,0.8518518518518519,0.9979259912643184
+Numeri,forza,5.0,0.8181818181818182,0.9981699058599405
+Numeri,PageRank,4.0,0.7699115044247787,0.9906877640578745
+Numeri,PageRank con pesi / senza pesi,,0.680672268907563,0.9588635386959665

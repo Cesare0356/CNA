@@ -36,3 +36,8 @@ prova.py
 holding_time.ipynb
 mint_control.ipynb
 verifica.ipynb
+
+# Dataset completo e tabelle intermedie: superano il limite di 100 MB di GitHub
+fragment_final.jsonl
+*.parquet
+analisi_output/dati/
