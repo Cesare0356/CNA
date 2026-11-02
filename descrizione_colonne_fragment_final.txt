@@ -1,0 +1,123 @@
+FRAGMENT MULTILAYER NETWORK ANALYSIS
+Dizionario delle colonne del dataset finale
+============================================================
+
+File di riferimento: dataset_network_final/fragment_final.jsonl
+Formato: JSON Lines (un oggetto JSON per action).
+Layer attualmente presenti: usernames, phone_numbers.
+Numero di action al termine del preprocessing: 3.406.889.
+
+Ogni riga rappresenta un'action elaborata, NON necessariamente
+un arco tra wallet distinti. Il mittente è ricostruito seguendo
+l'ordine cronologico degli eventi dello stesso NFT, privilegiando
+l'ultimo destinatario osservato rispetto all'old_owner originale.
+
+COLONNE CONSERVATE (16)
+------------------------------------------------------------
+
+1. layer
+   Mercato a cui appartiene l'NFT: "usernames" o "phone_numbers".
+   Permette di costruire e confrontare i layer della rete.
+
+2. nft
+   Indirizzo blockchain univoco dell'NFT.
+   Serve a riconoscere l'asset e raggrupparne le operazioni.
+
+3. asset_name
+   Nome leggibile dell'NFT, per esempio "@username" oppure
+   "+888 0694 1320".
+
+4. categories
+   Lista delle categorie associate all'NFT, per esempio
+   ["69 Club"] o ["No_Categories"]. Può contenere più etichette.
+   È utile per arricchimento delle comunità e analisi per categoria.
+
+5. sender
+   Wallet mittente ricostruito: generalmente il destinatario
+   dell'ultimo cambiamento di proprietà osservato per lo stesso NFT.
+   Nel primo evento, in assenza di una cronologia precedente, usa
+   old_owner o real_old_owner se disponibili; altrimenti è null.
+   ATTENZIONE: può non coincidere con il mittente dichiarato nella
+   singola action quando esistono discontinuità o contratti intermediari.
+
+6. recipient
+   Wallet destinatario, ricavato da details.new_owner.
+   Se null, non si identifica una nuova acquisizione.
+
+7. timestamp
+   Data e ora dell'action, in formato ISO 8601 UTC,
+   per esempio "2025-01-12T04:15:37Z".
+   Rappresenta la data del passaggio osservato.
+
+8. sender_acquired_at
+   Data e ora del precedente passaggio con cui il sender
+   ricostruito ha acquisito l'NFT. È null quando l'acquisizione
+   non è ricostruibile dal dataset.
+
+9. sender_released_at
+   Data e ora in cui il sender ricostruito cede l'NFT a un
+   destinatario diverso; in questi casi coincide con timestamp.
+   È null per primi eventi senza mittente, eventi senza
+   cambio proprietario e destinatari mancanti.
+
+10. recipient_acquired_at
+    Data e ora di inizio del possesso ricostruito del recipient.
+    Di norma coincide con timestamp quando cambia il proprietario.
+    Se il recipient coincide con il proprietario già osservato,
+    conserva la data della sua acquisizione precedente.
+
+11. holding_days_sender
+    Durata del possesso ricostruito del sender, espressa in giorni:
+    (sender_released_at - sender_acquired_at) / 86.400 secondi.
+    È null se manca l'acquisizione precedente, se non avviene un
+    cambio di proprietario o se il destinatario è assente.
+    Gli ultimi periodi di possesso osservati sono ancora aperti:
+    il dataset delle actions non crea per essi una riga aggiuntiva.
+
+12. action_type
+    Tipo di action da cui deriva l'evento; nel dataset filtrato
+    sono presenti "nft_transfer" e "nft_purchase".
+
+13. is_purchase
+    Booleano che indica un acquisto candidato: true se
+    action_type == "nft_purchase" oppure details.is_purchase == true.
+    Non distingue da solo tutte le modalità di vendita e asta.
+
+14. price_ton
+    Prezzo in TON ricavato da details.price / 1.000.000.000,
+    riportato soltanto per le actions classificate come acquisti.
+    Se null, il prezzo non è disponibile/non è stato incluso:
+    NON significa necessariamente che il trasferimento sia gratuito.
+    La semantica economica del prezzo va validata prima dell'analisi.
+
+15. action_id
+    Identificativo originale dell'action, utile per tracciabilità,
+    deduplicazione e verifiche.
+
+16. trace_id
+    Identificativo della trace blockchain a cui appartiene
+    l'action; permette di collegare operazioni tecnicamente correlate.
+
+REGOLE DI UTILIZZO PER IL GRAFO
+------------------------------------------------------------
+- NULL -> A: conservare la riga e creare il nodo A; nessun arco.
+- A -> B (A diverso da B): creare un arco orientato A -> B.
+- B -> B: conservare la riga, ma non creare un autoarco per la
+  rete dei cambi di proprietario; il possesso di B prosegue.
+- B -> NULL: non creare un arco e non terminare automaticamente
+  il periodo di possesso ricostruito.
+- Un wallet noto soltanto come destinatario iniziale deve essere
+  aggiunto esplicitamente come nodo, anche se isolato.
+
+NOTA METODOLOGICA
+------------------------------------------------------------
+Il file rappresenta una ricostruzione sequenziale basata sui
+recipient osservati; non è una prova completa dell'identità del
+proprietario economico in presenza di contratti intermediari.
+Il conteggio OWNER_CHANGE del notebook non equivale al numero di
+archi validi: comprende anche i primi eventi con sender ignoto.
+Per le misure di rete usare solo sender e recipient non nulli e
+differenti, mantenendo comunque tutti i nodi osservati.
+
+Il database SQLite intermedio e i JSONL puliti originali sono
+consigliati come copie di audit; non sono colonne del file finale.
