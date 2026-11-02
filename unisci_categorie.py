@@ -31,9 +31,18 @@ for n in range(5, 11):
 
 df = pd.read_csv(dati, header=None if senza_head else "infer", dtype=str)
 col = df.columns[int(col)] if col.isdigit() else col
-pulito = df[col].str.strip().str.lstrip("@").str.lower()
-orig = df[col]
-df[col] = orig.where(orig.str.startswith("@"), "@" + orig.str.strip())   # username originale invariato; aggiunge la @ solo se manca
+orig = df[col].fillna("").str.strip()
+
+pulito = (
+    orig
+    .str.lstrip("@")
+    .str.lower()
+)
+
+df[col] = orig.where(
+    orig.str.startswith("@") | orig.eq(""),
+    "@" + orig
+)
 
 cat = pd.read_csv(cats, dtype={"usernames": str}).drop_duplicates("usernames").set_index("usernames")
 elenco = cat.reindex(pulito.values).fillna(0).astype(int)
