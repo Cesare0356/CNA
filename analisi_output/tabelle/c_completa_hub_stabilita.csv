@@ -1,0 +1,3 @@
+layer,top 1% per grado: quota degli archi toccati,indirizzi con grado ≥ 100,Jaccard minimo tra metriche,Jaccard massimo tra metriche,Jaccard PageRank con / senza pesi,Spearman PageRank con / senza pesi
+Username,0.2485517332629983,945,0.18421052631578946,0.7813383600377003,0.7813383600377003,0.9293586758332308
+Numeri,0.3569258174216438,592,0.289760348583878,0.6652601969057665,0.5538057742782152,0.9102601637172507

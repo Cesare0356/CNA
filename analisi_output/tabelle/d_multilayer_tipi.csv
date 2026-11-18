@@ -1,0 +1,5 @@
+tipo,comunita,wallet_mediani,wallet_max,passaggi_username,passaggi_numeri,core,"quota dei passaggi interni, username","quota dei passaggi interni, numeri",coppie (2 wallet)
+solo username,25785,3.0,41084,1132506.0,5197.0,539,0.8128472974854621,0.009159339371412356,7561
+solo numeri,5627,3.0,39732,1310.0,292474.0,496,0.0009402422236226169,0.5154644262679349,1736
+"inter-layer, stessi wallet",5079,2.0,55,49500.0,35602.0,253,0.03552823669413705,0.0627459688860925,2672
+"inter-layer, wallet diversi",355,6.0,19236,209942.0,234126.0,678,0.1506842235967782,0.4126302654745602,0

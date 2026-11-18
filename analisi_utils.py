@@ -1,5 +1,4 @@
 """Funzioni comuni ai notebook di analisi (fasi B-E del piano operativo)."""
-import random
 from pathlib import Path
 
 import igraph as ig
@@ -89,26 +88,6 @@ def non_orientato(g):
     return g.as_undirected(mode='collapse', combine_edges={'weight': 'sum', 'n_distinct_nfts': 'sum', 'n_vendite': 'sum'})
 
 
-def z_score(osservato, nullo):
-    nullo = np.asarray(nullo, dtype=float)
-    m, s = nullo.mean(), nullo.std(ddof=1)
-    return (osservato - m) / s if s > 0 else np.nan
-
-
-def p_empirico(osservato, nullo):
-    nullo = np.asarray(nullo, dtype=float)
-    return (1 + np.sum(np.abs(nullo - nullo.mean()) >= abs(osservato - nullo.mean()))) / (1 + len(nullo))
-
-
-def benjamini_hochberg(p):
-    p = np.asarray(p, dtype=float)
-    n = len(p)
-    ordine = np.argsort(p)
-    q = np.empty(n)
-    q[ordine] = np.minimum.accumulate((p[ordine] * n / np.arange(1, n + 1))[::-1])[::-1]
-    return np.minimum(q, 1)
-
-
 def ccdf(x):
     # P(X >= k) per ogni valore distinto k
     x = np.sort(np.asarray(x))
@@ -130,22 +109,3 @@ def leggibile(df):
 
 def corto(indirizzo):
     return indirizzo[:10] + '…'
-
-
-def nullo_configurazione(g, seed):
-    # Configuration model sui passaggi: ogni wallet tiene quanti NFT cede e riceve, cambiano le controparti.
-    # I passaggi ripetuti tra la stessa coppia diventano il peso, i self-loop del modello si scartano
-    random.seed(seed)
-    h = attivi(g)
-    n = ig.Graph.Degree_Sequence(h.strength(mode='out', weights='weight'), h.strength(mode='in', weights='weight'),
-                                 method='configuration')
-    n.vs['name'] = h.vs['name']
-    n.es['weight'] = 1
-    n.simplify(multiple=True, loops=True, combine_edges={'weight': 'sum'})
-    return n
-
-
-def modularita_louvain(u, seed):
-    # Modularita' pesata della partizione di Louvain su un grafo non orientato
-    random.seed(seed)
-    return u.modularity(u.community_multilevel(weights='weight').membership, weights='weight')
